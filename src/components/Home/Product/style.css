@@ -1,0 +1,8 @@
+.home__product__card {
+  margin-top: 15px;
+}
+
+.home__product__card .ant-card-body {
+  padding-top: 15px;
+  padding-bottom: 35px;
+}
