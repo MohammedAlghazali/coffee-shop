@@ -18,14 +18,30 @@ module.exports = {
       },
     },
     {
-			resolve: 'gatsby-plugin-snipcart',
-			options: {
+      resolve: "gatsby-plugin-snipcart",
+      options: {
         apiKey: process.env.SNIPCART_API,
-        autopop: true
-			}
-		},
+        autopop: true,
+      },
+    },
     `gatsby-plugin-react-helmet`,
-    "gatsby-plugin-antd",
+    {
+      resolve: "gatsby-plugin-antd",
+      options: {
+        style: true,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-less",
+      options: {
+        lessOptions: {
+          modifyVars: {
+            "primary-color": "#bb6b24",
+          },
+          javascriptEnabled: true,
+        },
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
