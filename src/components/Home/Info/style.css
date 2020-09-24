@@ -1,0 +1,9 @@
+.home__info {
+  margin: 55px 0;
+  text-align: center;
+}
+
+.home__info__paragraph {
+  font-size: 18px;
+  color: rgb(128 126 126);
+}

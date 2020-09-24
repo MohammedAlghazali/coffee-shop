@@ -17,8 +17,9 @@ const IndexPage = ({ data }) => {
       <SEO title="Home" />
       <BackgroundSection
         img={data.img.childImageSharp.fluid}
-        title="Mohammed Alghazali"
+        title="Welcome To Our Coffee Shop"
         styleClass="default-background"
+        headingClass="home-heading"
       />
       <Info />
       <Menu items={data.menu} />

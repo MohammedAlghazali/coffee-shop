@@ -595,3 +595,13 @@ pre tt:after {
     font-size: 100%;
   }
 }
+
+.home-heading {
+  color: wheat;
+  text-align: center;
+  padding-top: 170px;
+}
+
+.default-background {
+  min-height: 630px;
+}
