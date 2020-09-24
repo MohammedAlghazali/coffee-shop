@@ -44,7 +44,7 @@ export default function Contact() {
   }
 
   return (
-    <>
+    <div id="contact">
       <Title title="Contact Us" />
       <Form
         {...layout}
@@ -100,6 +100,6 @@ export default function Contact() {
           </Button>
         </Form.Item>
       </Form>
-    </>
+    </div>
   )
 }

@@ -1,7 +1,9 @@
 import React, { useState } from "react"
+import { Link } from "gatsby"
 import { Button } from "antd"
 import { AiOutlineClose } from "react-icons/ai"
 import { FaCartArrowDown } from "react-icons/fa"
+import { FiCoffee } from "react-icons/fi"
 
 import "./nav.css"
 
@@ -17,8 +19,21 @@ const RightMenu = () => {
     <>
       {visible ? (
         <>
-          <div style={{ zIndex: "1" }} className="navbar__btn">
-            <Button type="primary" onClick={onClose}>
+          <div
+            style={{
+              zIndex: "2",
+            }}
+            className="navbar__btn"
+          >
+            <div className="navbar__logo">
+              <FiCoffee />
+              &nbsp; Coffee
+            </div>
+            <Button
+              style={{ marginLeft: "65px" }}
+              type="primary"
+              onClick={onClose}
+            >
               <AiOutlineClose />
             </Button>
           </div>
@@ -33,10 +48,15 @@ const RightMenu = () => {
       )}
 
       <ul className={`navbar__menu ${isNavOpen}`}>
-        <li className="navbar__menu__item">Home</li>
-        <li className="navbar__menu__item">About</li>
-        <li className="navbar__menu__item">Contact</li>
-        <li className="navbar__menu__item">Price</li>
+        <li className="navbar__menu__item">
+          <Link to="/">Home</Link>
+        </li>
+        <li className="navbar__menu__item">
+          <Link to="/about">About</Link>
+        </li>
+        <li className="navbar__menu__item">
+          <Link to="/#contact">Contact</Link>
+        </li>
         <li className="navbar__menu__item">
           <FaCartArrowDown className="snipcart-checkout" />
         </li>
