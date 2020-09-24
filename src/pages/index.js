@@ -1,20 +1,61 @@
 import React from "react"
-import { Link } from "gatsby"
-import { Button } from "antd"
+import { graphql } from "gatsby"
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import { FaCoffee } from "react-icons/fa"
+import Layout from "../components/Global/layout"
+import SEO from "../components/Home/seo"
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <Button type="primary">Primary</Button>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <FaCoffee />
-  </Layout>
-)
+import BackgroundSection from "../components/Home/BackgroundSection"
+import Info from "../components/Home/Info"
+import Menu from "../components/Home/Menu"
+import Products from "../components/Home/Products"
+import Contact from "../components/Home/Contact"
+
+const IndexPage = ({ data }) => {
+  console.log("data", data)
+  return (
+    <Layout>
+      <SEO title="Home" />
+      <BackgroundSection
+        img={data.img.childImageSharp.fluid}
+        title="Mohammed Alghazali"
+        styleClass="default-background"
+      />
+      <Info />
+      <Menu items={data.menu} />
+      <Products />
+      <Contact />
+    </Layout>
+  )
+}
+
+export const query = graphql`
+  {
+    img: file(relativePath: { eq: "coffee-image.jpg" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid_tracedSVG
+        }
+      }
+    }
+    menu: allContentfulCoffeeItem {
+      edges {
+        node {
+          id
+          title
+          description {
+            description
+          }
+          price
+          categoty
+          image {
+            fixed(width: 50, height: 50) {
+              ...GatsbyContentfulFixed_tracedSVG
+            }
+          }
+        }
+      }
+    }
+  }
+`
 
 export default IndexPage
