@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { Button } from "antd"
 import { AiOutlineClose } from "react-icons/ai"
+import { FaCartArrowDown } from "react-icons/fa"
 
 import "./nav.css"
 
@@ -36,7 +37,9 @@ const RightMenu = () => {
         <li className="navbar__menu__item">About</li>
         <li className="navbar__menu__item">Contact</li>
         <li className="navbar__menu__item">Price</li>
-        <li className="navbar__menu__item">Cart</li>
+        <li className="navbar__menu__item">
+          <FaCartArrowDown className="snipcart-checkout" />
+        </li>
       </ul>
     </>
   )
