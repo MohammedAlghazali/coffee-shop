@@ -1,7 +1,10 @@
 import React, { useState } from "react"
-import { Empty, Tag } from "antd"
-import Title from "../../Global/Title"
+import { Empty, Tag, Row, Col } from "antd"
 import Img from "gatsby-image"
+
+import "./style.css"
+
+import Title from "../../Global/Title"
 
 const { CheckableTag } = Tag
 
@@ -30,31 +33,61 @@ const Menu = ({ items }) => {
   return coffeeItems.length === 0 ? (
     <Empty />
   ) : (
-    <section>
-      <div className="container">
-        <Title title="our menu" />
-        <>
-          <span style={{ marginRight: 8 }}>Categories:</span>
-          {uniqueTags.map(tag => (
-            <CheckableTag
-              key={tag}
-              checked={selectedTags.indexOf(tag) > -1}
-              onChange={checked => handleChange(tag, checked)}
-            >
-              {tag}
-            </CheckableTag>
-          ))}
-        </>
-        {coffeeItemsFiltered.map(coffee => (
-          <div key={coffee.node.id}>
-            <Img fixed={coffee.node.image.fixed} />
-            <div>{coffee.node.description.description}</div>
-            <div>{coffee.node.title}</div>
-            <div>{coffee.node.price}</div>
-          </div>
+    <Row className="home__menu">
+      <Col span={24}>
+        <Title title="Our Menu" />
+      </Col>
+
+      <Col
+        xs={18}
+        sm={16}
+        md={16}
+        lg={14}
+        xl={24}
+        className="home__menu__tag-container"
+      >
+        {uniqueTags.map(tag => (
+          <CheckableTag
+            className="home__menu__tag"
+            key={tag}
+            checked={selectedTags.indexOf(tag) > -1}
+            onChange={checked => handleChange(tag, checked)}
+          >
+            {tag}
+          </CheckableTag>
         ))}
-      </div>
-    </section>
+      </Col>
+      <Col xs={18} sm={16} md={16} lg={14} xl={24}>
+        <Row justify="center" gutter={30}>
+          {coffeeItemsFiltered.map(coffee => (
+            <Col
+              className="home__menu__item"
+              key={coffee.node.id}
+              xs={18}
+              sm={16}
+              md={16}
+              lg={14}
+              xl={10}
+            >
+              <Row>
+                <Col span={3}>
+                  <Img fixed={coffee.node.image.fixed} />
+                </Col>
+                <Col span={21}>
+                  <Col className="home__menu__item__title">
+                    {coffee.node.title}
+                  </Col>
+                  <Col>{coffee.node.description.description}</Col>
+                  <Col className="home__menu__item__price">
+                    ${coffee.node.price}
+                  </Col>
+                </Col>
+              </Row>
+            </Col>
+          ))}
+        </Row>
+      </Col>
+    </Row>
   )
 }
 
