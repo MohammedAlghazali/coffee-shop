@@ -1,6 +1,11 @@
 import React from "react"
-import Product from "../Product"
 import { StaticQuery, graphql } from "gatsby"
+import { Row, Col } from "antd"
+
+import "./style.css"
+
+import Title from "../../Global/Title"
+import Product from "../Product"
 
 const getProducts = graphql`
   {
@@ -29,10 +34,13 @@ export default function Products() {
       render={data => {
         console.log("data", data)
         return (
-          <section>
-            {data.products.edges.map(({ node: product }) => {
-              return <Product key={product.id} product={product} />
-            })}
+          <section className="home__product">
+            <Title title="Out Product" />
+            <Row justify="center">
+              {data.products.edges.map(({ node: product }) => {
+                return <Product key={product.id} product={product} />
+              })}
+            </Row>
           </section>
         )
       }}

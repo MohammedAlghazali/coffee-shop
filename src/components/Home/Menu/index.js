@@ -58,7 +58,7 @@ const Menu = ({ items }) => {
         ))}
       </Col>
       <Col xs={18} sm={16} md={16} lg={14} xl={24}>
-        <Row justify="center" gutter={30}>
+        <Row justify="center" gutter={30} style={{ margin: "0" }}>
           {coffeeItemsFiltered.map(coffee => (
             <Col
               className="home__menu__item"
