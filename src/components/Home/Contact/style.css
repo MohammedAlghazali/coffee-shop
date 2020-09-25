@@ -1,0 +1,9 @@
+.home__contact {
+  text-align: center;
+  background-color: #ede6db;
+  padding: 55px 0;
+}
+
+.home__contact .ant-form {
+  width: 550px;
+}
