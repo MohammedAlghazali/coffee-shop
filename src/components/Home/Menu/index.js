@@ -38,14 +38,7 @@ const Menu = ({ items }) => {
         <Title title="Our Menu" />
       </Col>
 
-      <Col
-        xs={18}
-        sm={16}
-        md={16}
-        lg={14}
-        xl={24}
-        className="home__menu__tag-container"
-      >
+      <Col span={24} className="home__menu__tag-container">
         {uniqueTags.map(tag => (
           <CheckableTag
             className="home__menu__tag"
@@ -57,16 +50,16 @@ const Menu = ({ items }) => {
           </CheckableTag>
         ))}
       </Col>
-      <Col xs={18} sm={16} md={16} lg={14} xl={24}>
+      <Col span={24}>
         <Row justify="center" gutter={30} style={{ margin: "0" }}>
           {coffeeItemsFiltered.map(coffee => (
             <Col
               className="home__menu__item"
               key={coffee.node.id}
-              xs={18}
-              sm={16}
+              xs={20}
+              sm={20}
               md={16}
-              lg={14}
+              lg={16}
               xl={10}
             >
               <Row>

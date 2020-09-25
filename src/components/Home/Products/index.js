@@ -36,7 +36,7 @@ export default function Products() {
         return (
           <section className="home__product">
             <Title title="Out Product" />
-            <Row justify="center">
+            <Row gutter={35} justify="center">
               {data.products.edges.map(({ node: product }) => {
                 return <Product key={product.id} product={product} />
               })}

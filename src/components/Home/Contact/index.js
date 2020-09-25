@@ -15,7 +15,7 @@ const layout = {
 }
 const tailLayout = {
   wrapperCol: {
-    offset: 8,
+    offset: 0,
     span: 16,
   },
 }
@@ -101,7 +101,11 @@ export default function Contact() {
         </Form.Item>
 
         <Form.Item {...tailLayout}>
-          <Button type="primary" htmlType="submit">
+          <Button
+            style={{ width: "550px", marginTop: "20px" }}
+            type="primary"
+            htmlType="submit"
+          >
             Submit
           </Button>
         </Form.Item>

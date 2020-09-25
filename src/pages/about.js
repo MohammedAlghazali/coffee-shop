@@ -14,8 +14,9 @@ const AboutPage = ({ data }) => {
       <SEO title="Home" />
       <BackgroundSection
         img={data.img.childImageSharp.fluid}
-        title="we are in about page"
+        title="Welcome In About Page"
         styleClass="default-background"
+        headingClass="home-heading"
       />
       <Info />
     </Layout>
