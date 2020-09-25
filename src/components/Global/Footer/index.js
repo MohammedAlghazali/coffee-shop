@@ -1,7 +1,9 @@
 import React from "react"
 
+import "./style.css"
+
 const Footer = () => {
-  return <footer>this is a footer</footer>
+  return <footer>Made With 💓 By Mohammed Alghazali</footer>
 }
 
 export default Footer

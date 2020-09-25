@@ -1,19 +1,21 @@
 import React from "react"
 import Title from "../../Global/Title"
-import { Form, Input, Button, notification } from "antd"
+import { Form, Input, Button, notification, Row, Col } from "antd"
+
+import "./style.css"
 
 const axios = require("axios")
 const layout = {
   labelCol: {
-    span: 8,
+    span: 24,
   },
   wrapperCol: {
-    span: 16,
+    span: 24,
   },
 }
 const tailLayout = {
   wrapperCol: {
-    offset: 8,
+    offset: 0,
     span: 16,
   },
 }
@@ -44,8 +46,11 @@ export default function Contact() {
   }
 
   return (
-    <div id="contact">
-      <Title title="Contact Us" />
+    <Row justify="center" className="home__contact" id="contact">
+      <Col xs={18} sm={16} md={16} lg={14} xl={24}>
+        <Title title="Contact Us" />
+      </Col>
+
       <Form
         {...layout}
         name="basic"
@@ -56,6 +61,7 @@ export default function Contact() {
         onFinishFailed={onFinishFailed}
       >
         <Form.Item
+          span={12}
           label="Name"
           name="name"
           rules={[
@@ -95,11 +101,15 @@ export default function Contact() {
         </Form.Item>
 
         <Form.Item {...tailLayout}>
-          <Button type="primary" htmlType="submit">
+          <Button
+            style={{ width: "550px", marginTop: "20px" }}
+            type="primary"
+            htmlType="submit"
+          >
             Submit
           </Button>
         </Form.Item>
       </Form>
-    </div>
+    </Row>
   )
 }

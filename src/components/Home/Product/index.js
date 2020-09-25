@@ -8,9 +8,9 @@ const { Meta } = Card
 
 const Product = ({ product }) => {
   return (
-    <Col xs={18} sm={16} md={16} lg={14} xl={5} className="home__product__card">
+    <Col xs={13} sm={13} md={9} lg={7} xl={6} className="home__product__card">
       <Card
-        style={{ width: 250, textAlign: "center" }}
+        style={{ textAlign: "center" }}
         cover={<Img fluid={product.image.fluid} />}
       >
         <Meta title={product.title} />
