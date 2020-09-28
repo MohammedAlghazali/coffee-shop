@@ -1,6 +1,6 @@
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
-import { Row, Col } from "antd"
+import { Row } from "antd"
 
 import "./style.css"
 
