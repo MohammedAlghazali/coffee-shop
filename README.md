@@ -1,6 +1,6 @@
 # Coffee Shop
 
-[You can visit our site from this link](alghazali-coffee-shop.netlify.app/)
+[You can visit the site from this link](alghazali-coffee-shop.netlify.app/)
 
 ## Summary
 
